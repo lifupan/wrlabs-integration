@@ -1,0 +1,26 @@
+From 884384431f126860c1c7b39d271f36f9b299dd31 Mon Sep 17 00:00:00 2001
+From: fli <fupan.li@windriver.com>
+Date: Thu, 13 Jul 2017 03:12:00 -0700
+Subject: [PATCH] ostree: install ostree-bootdir to ${libdir}
+
+Signed-off-by: fli <fupan.li@windriver.com>
+---
+ Makefile-decls.am | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile-decls.am b/Makefile-decls.am
+index 06018594..311a6f78 100644
+--- a/Makefile-decls.am
++++ b/Makefile-decls.am
+@@ -44,7 +44,7 @@ gir_DATA =
+ typelibdir = $(libdir)/girepository-1.0
+ typelib_DATA =
+ gsettings_SCHEMAS =
+-ostree_bootdir = $(prefix)/lib/ostree
++ostree_bootdir = $(libdir)/ostree
+ ostree_boot_PROGRAMS =
+ 
+ # This initializes some more variables
+-- 
+2.11.0
+

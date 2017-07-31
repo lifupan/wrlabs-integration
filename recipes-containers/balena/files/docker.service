@@ -1,0 +1,15 @@
+[Unit]
+Description=Balena Application Container Engine
+Documentation=https://github.com/resin-os/balena
+After=network.target docker.socket
+Requires=docker.socket
+
+[Service]
+ExecStart=/usr/sbin/balenad -H fd:// -H unix:///var/run/balena.sock --registry-mirror=http://localhost:5000 --insecure-registry=http://localhost:5000 --raw-logs
+MountFlags=slave
+LimitNOFILE=1048576
+LimitNPROC=1048576
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
